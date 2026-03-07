@@ -108,6 +108,45 @@
 .zoom-effect:hover {
   transform: scale(1.1);
 }
+	/* Ensure the hero text scales for mobile */
+.hero .text h1 {
+    font-size: clamp(2rem, 8vw, 4rem) !important;
+    line-height: 1.2;
+}
+
+.hero .text h2 {
+    font-size: clamp(1.2rem, 5vw, 2rem) !important;
+}
+
+/* Fix the typing animation cut-off */
+#typing-animation {
+    display: inline-block;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    white-space: normal; /* Allows wrapping if the name is too long */
+    border-right: 3px solid #ffbd39; /* Smoother cursor */
+}
+
+/* Fix the 'About Me' overlapping on mobile */
+@media (max-width: 767.98px) {
+    .img-about {
+        height: auto !important;
+        padding: 20px;
+    }
+    .about-img img {
+        margin-left: 0 !important;
+        margin-bottom: 20px;
+    }
+    .counter-wrap {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Ensure the background image is centered */
+.slider-item .one-third {
+    background-position: center top !important;
+    height: 50vh !important; /* Limits image height on mobile */
+}
 
 
 </style>
@@ -117,23 +156,31 @@
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
 	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Mahavir Agravat</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+   <div class="col-md-6 col-lg-5 d-flex">
+    <div class="img-about img d-flex align-items-stretch">
+        <div class="overlay" style="background: transparent; opacity: 1;">
+            <div class="row">
+                <div class="col-12 col-sm-5 mb-3">
+                    <div class="about-img">
+                        <img src="images/About.me.png" class="img-fluid rounded b-shadow-a" alt="Mahavir Agravat">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-7">
+                    <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span>Mahavir Agravat</span></p>
+                        <p><span class="title-s">Job: </span> <span>Graduate Engineer Trainee</span></p>
+                        <p><span class="title-s">Exp: </span> <span>1.5 Years</span></p>
+                        <p><span class="title-s">Loc: </span> <span>Surat, India</span></p>
+                    </div>
+                </div>
+            </div>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
+            <div class="skill-mf mt-4">
+                <p class="title-s">Skills</p>
+                </div>
+        </div>
+    </div>
+</div>
 	  </nav>
 	  <section id="home-section" class="hero">
 		  <div class="home-slider  owl-carousel">
